@@ -1,4 +1,4 @@
-# AIRPORT_Project
+# Test-Website
 
 **[Site link](https://musing-curie-854b77.netlify.app)**
 
@@ -11,12 +11,10 @@ The tech stack is:
 - BEM methodology
 - JavaScript
 - React
-- Redux
-- qs library
 - momemt library
 
 #### Author
 
 - ##### Buhaienko-Kate
 
-# Airport_Project
+# Test-Website
