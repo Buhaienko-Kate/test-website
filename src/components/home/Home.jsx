@@ -42,7 +42,7 @@ const Home = ({ cards }) => {
       </div>
       <div className="main-container__result">{`Results: ${filteredCards.length}`}</div>
       <div className="main-container__cards">
-        {highlightedArticles.map(({ id, title, description, avatar, dateCreate }) => {
+        {highlightedArticles.map(({ id, titleArr, descriptionArr, avatar, dateCreate }) => {
           const day = moment(dateCreate).format('MMMM Do, YYYY');
 
           return (
@@ -52,8 +52,8 @@ const Home = ({ cards }) => {
                 <FontAwesomeIcon className="card-block__date-icon" icon={faCalendar} />
                 <span>{day}</span>
               </div>
-              <h2 className="card-block__title">{title}</h2>
-              <div className="card-block__desc">{description}</div>
+              <h2 className="card-block__title">{titleArr}</h2>
+              <div className="card-block__desc">{descriptionArr}</div>
               <div className="card-block__link">
                 <Link className="card-block__link-text" to={`/${id}`}>
                   Read more

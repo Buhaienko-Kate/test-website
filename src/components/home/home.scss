@@ -132,6 +132,8 @@
   }
 
   &__title {
+    display: flex;
+    flex-wrap: wrap;
     width: 355px;
     height: 58px;
     margin-left: 20px;
@@ -143,13 +145,14 @@
     color: #363636;
   }
   &__desc {
+    display: flex;
+    flex-wrap: wrap;
     width: 350px;
     height: 96px;
     margin-left: 25px;
     margin-bottom: 20px;
-    text-overflow: ellipsis;
     overflow: hidden;
-    display: -webkit-box;
+    text-overflow: ellipsis;
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
     font-style: normal;
@@ -157,6 +160,10 @@
     font-size: 16px;
     line-height: 24px;
     color: #363636;
+    & span {
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
   }
   &__link {
     display: flex;
