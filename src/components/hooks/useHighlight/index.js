@@ -5,18 +5,24 @@ export const useHighlight = (inputValue, cardsArray) => {
 
   return cardsArray.map(card => {
     const { title, description } = card;
-    const getHighlightedSearch = (classes, word) =>
+    const getHighlightedSearch = (classes, word, index) =>
       searchInputArr.includes(word) ? (
-        <span className={`${classes} ${classes}_highlighted`}>{word}</span>
+        <span key={index} className={`${classes} ${classes}_highlighted`}>
+          {word}
+        </span>
       ) : (
-        <span className={classes}>{word}</span>
+        <span key={index} className={classes}>
+          {word}
+        </span>
       );
 
-    const titleArr = title.split(' ').map(word => getHighlightedSearch('title-word', word));
+    const titleArr = title
+      .split(' ')
+      .map((word, index) => getHighlightedSearch('title-word', word, index));
 
     const descriptionArr = description
       .split(' ')
-      .map(word => getHighlightedSearch('description-word', word));
+      .map((word, index) => getHighlightedSearch('description-word', word, index));
 
     return { ...card, titleArr, descriptionArr };
   });
